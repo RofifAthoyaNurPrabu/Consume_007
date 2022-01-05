@@ -42,12 +42,11 @@
                   <div class="form-group my-3">
                     <label for="harga" class="form-label">harga indomie</label>
                     <input type="text" class="form-control" id="harga" placeholder="Masukkan harga indomie ">
+                  </div>
                   <button type="button" class="btn btn-success ms-2 mt-4" onclick="saveData();">Save Data</button>
             </div>  
-            </form>
-            </div>
-        </div>
-                    
+          </form>
+        </div>            
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -78,8 +77,8 @@
     function saveData(){
     var body = {
         id_indomie:$("#id_indomie").val(),
-      jenis:$("#jenis").val(),
-      harga:$("#harga").val(),
+        jenis:$("#jenis").val(),
+        harga:$("#harga").val()
     }
     var json = JSON.stringify(body)
     console.log(json)
@@ -102,10 +101,10 @@
         axios.get(
             `http://localhost:8080/indomie/indomie/${params}`
         ).then((result) => {
-            console.log(result)
+            console.log(result.data)
             $("#id_indomie").val(result.data.id_indomie);
             $("#jenis").val(result.data.jenis);
-            $("#harga").val(result.data.harga);
+            $("#harga").val(result.data.harga)
         }).catch((err) => {
             console.log(error)
         });
