@@ -30,10 +30,6 @@ $("#tbl").ready(function () {
             const td3 = tr.insertCell();
             const td4 = tr.insertCell();
             console.log(response[i])
-                // const aksi = tr. document.getElementById("tbl-aksi")
-                // aksi.innerHTML = 
-                
-                // td.innerHTML = response[i][Object.keys(response[i])[j]];
             td1.innerHTML = response[i].id_indomie
             td2.innerHTML = response[i].jenis
             td3.innerHTML = response[i].harga
